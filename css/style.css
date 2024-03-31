@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #161616;
+}
+.loading {
+  position: relative;
+  display: flex;
+}
+.loading span {
+  position: absolute;
+  top: -150px;
+  width: 5px;
+  height: 40px;
+  transform: rotate(calc(var(--i) * 18deg));
+  transform-origin: 0 150px;
+}
+.loading span::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: animate 8s linear infinite;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes animate {
+  0% {
+    background: #0f0;
+    box-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0, 0 0 50px #0f0;
+  }
+  20% {
+    background: #0f0;
+    box-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0, 0 0 50px #0f0;
+  }
+  40% {
+    background: #0f0;
+    box-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0, 0 0 50px #0f0;
+    rotate: 90deg;
+  }
+  80% {
+    background: #0f0;
+    box-shadow: 0 0 5px #0f0, 0 0 15px #0f0, 0 0 30px #0f0, 0 0 50px #0f0;
+    filter: hue-rotate(360deg);
+    rotate: 90deg;
+    transform: scale(1);
+  }
+  90% {
+    box-shadow: none;
+    rotate: 90deg;
+  }
+  90% {
+    box-shadow: none;
+    background: transparent;
+  }
+}
